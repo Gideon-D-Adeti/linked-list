@@ -150,3 +150,17 @@ class LinkedList {
 }
 
 
+const linkedList = new LinkedList();
+
+linkedList.append(1);
+linkedList.append(2);
+linkedList.append(3);
+linkedList.prepend(0);
+
+console.log(linkedList.toString());  // Output: ( 0 ) -> ( 1 ) -> ( 2 ) -> ( 3 ) -> null
+
+linkedList.insertAt(1.5, 2);
+console.log(linkedList.toString());  // Output: ( 0 ) -> ( 1 ) -> ( 1.5 ) -> ( 2 ) -> ( 3 ) -> null
+
+linkedList.removeAt(2);
+console.log(linkedList.toString());  // Output: ( 0 ) -> ( 1 ) -> ( 2 ) -> ( 3 ) -> null
