@@ -119,4 +119,21 @@ class LinkedList {
     newNode.nextNode = current.nextNode;
     current.nextNode = newNode;
   }
+
+  removeAt(index) {
+    if (index < 0 || index >= this.size()) {
+      throw new Error("Index out of bounds");
+    }
+    if (index === 0) {
+      this.head = this.head.nextNode;
+      return;
+    }
+    let current = this.head;
+    let count = 0;
+    while (count < index - 1) {
+      current = current.nextNode;
+      count++;
+    }
+    current.nextNode = current.nextNode.nextNode;
+  }
 }
