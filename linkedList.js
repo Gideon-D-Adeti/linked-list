@@ -98,4 +98,25 @@ class LinkedList {
     }
     return null;
   }
+
+  insertAt(value, index) {
+    if (index < 0 || index > this.size()) {
+      throw new Error("Index out of bounds");
+    }
+    if (index === 0) {
+      this.prepend(value);
+    }
+    if (index === this.size()) {
+      this.append(value);
+    }
+    const newNode = new Node(value);
+    let current = this.head;
+    let count = 0;
+    while (count < index - 1) {
+      current = current.nextNode;
+      count++;
+    }
+    newNode.nextNode = current.nextNode;
+    current.nextNode = newNode;
+  }
 }
